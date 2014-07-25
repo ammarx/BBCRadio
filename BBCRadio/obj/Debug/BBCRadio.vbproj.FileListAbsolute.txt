@@ -1,0 +1,17 @@
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\BBCRadio.exe.config
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\BBCRadio.exe
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\BBCRadio.pdb
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\BBCRadio.xml
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.Form1.resources
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.Resources.resources
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.vbproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.exe
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.xml
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.pdb
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\Interop.WMPLib.dll
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\AxInterop.WMPLib.dll
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\Interop.WMPLib.dll
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\AxInterop.WMPLib.dll
+c:\users\user\documents\visual studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.vbproj.ResolveComReference.cache
+C:\Users\User\Documents\Visual Studio 2013\Projects\BBCRadio\BBCRadio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\Visual Studio 2013\Projects\BBCRadio\BBCRadio\obj\Debug\BBCRadio.vbprojResolveAssemblyReference.cache
