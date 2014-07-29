@@ -55,11 +55,14 @@ Partial Class Form1
         Me.ListBox4 = New System.Windows.Forms.ListBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -204,7 +207,7 @@ Partial Class Form1
         'LiveToolStripMenuItem
         '
         Me.LiveToolStripMenuItem.Name = "LiveToolStripMenuItem"
-        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
         Me.LiveToolStripMenuItem.Text = "Live"
         '
         'SettingsToolStripMenuItem
@@ -272,9 +275,9 @@ Partial Class Form1
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(12, 319)
+        Me.ComboBox1.Location = New System.Drawing.Point(140, 319)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(512, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(384, 21)
         Me.ComboBox1.TabIndex = 21
         '
         'PictureBox2
@@ -288,13 +291,33 @@ Partial Class Form1
         Me.PictureBox2.TabStop = False
         Me.PictureBox2.Visible = False
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 320)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(130, 20)
+        Me.TabControl1.TabIndex = 24
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(122, 0)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Available Programmes:"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(535, 416)
-        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.ListBox4)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -318,6 +341,7 @@ Partial Class Form1
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -353,5 +377,7 @@ Partial Class Form1
     Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
 
 End Class

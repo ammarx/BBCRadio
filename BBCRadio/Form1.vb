@@ -407,8 +407,35 @@ Public Class Form1
 
     Private Sub LiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiveToolStripMenuItem.Click
         'ComboBox1.SelectedText = ""
-        ' RefreshListToolStripMenuItem.Enabled = False
+        RefreshListToolStripMenuItem.Enabled = False
 
+        Try
+            BackgroundWorker1.CancelAsync()
+            
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            BackgroundWorker2.CancelAsync()
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            BackgroundWorker1.RunWorkerAsync()
+
+        Catch ex As Exception
+
+        End Try
+
+        Try
+            BackgroundWorker2.RunWorkerAsync()
+
+        Catch ex As Exception
+
+        End Try
         'BackgroundWorker1.RunWorkerAsync()
         'BackgroundWorker2.RunWorkerAsync()
 
