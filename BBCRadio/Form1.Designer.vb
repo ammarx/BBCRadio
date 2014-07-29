@@ -33,8 +33,6 @@ Partial Class Form1
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -55,28 +53,32 @@ Partial Class Form1
         Me.BackgroundWorker4 = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorker5 = New System.ComponentModel.BackgroundWorker()
         Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 224)
+        Me.Button1.Location = New System.Drawing.Point(465, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(466, 46)
+        Me.Button1.Size = New System.Drawing.Size(70, 29)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Play Selected Programme"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'AxWindowsMediaPlayer1
         '
         Me.AxWindowsMediaPlayer1.Enabled = True
-        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(12, 276)
+        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(12, 340)
         Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
         Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(712, 45)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(512, 45)
         Me.AxWindowsMediaPlayer1.TabIndex = 1
         '
         'ListBox1
@@ -84,13 +86,14 @@ Partial Class Form1
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(12, 31)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(466, 186)
+        Me.ListBox1.Size = New System.Drawing.Size(123, 30)
         Me.ListBox1.TabIndex = 7
+        Me.ListBox1.Visible = False
         '
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(389, 64)
+        Me.ListBox2.Location = New System.Drawing.Point(140, 64)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(59, 147)
         Me.ListBox2.TabIndex = 8
@@ -122,7 +125,7 @@ Partial Class Form1
         'ListBox3
         '
         Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(389, 31)
+        Me.ListBox3.Location = New System.Drawing.Point(140, 31)
         Me.ListBox3.Name = "ListBox3"
         Me.ListBox3.Size = New System.Drawing.Size(59, 173)
         Me.ListBox3.TabIndex = 14
@@ -131,24 +134,12 @@ Partial Class Form1
         'StatusStrip1
         '
         Me.StatusStrip1.AutoSize = False
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel6, Me.ToolStripStatusLabel5, Me.ToolStripStatusLabel7, Me.ToolStripStatusLabel8, Me.ToolStripStatusLabel9})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 330)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel6, Me.ToolStripStatusLabel5, Me.ToolStripStatusLabel7, Me.ToolStripStatusLabel8, Me.ToolStripStatusLabel9})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 394)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(738, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(535, 22)
         Me.StatusStrip1.TabIndex = 16
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(42, 17)
-        Me.ToolStripStatusLabel1.Text = "Name:"
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(12, 17)
-        Me.ToolStripStatusLabel2.Text = "-"
         '
         'ToolStripStatusLabel3
         '
@@ -199,7 +190,7 @@ Partial Class Form1
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.MenuStrip1.Size = New System.Drawing.Size(738, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(535, 24)
         Me.MenuStrip1.TabIndex = 17
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -213,7 +204,7 @@ Partial Class Form1
         'LiveToolStripMenuItem
         '
         Me.LiveToolStripMenuItem.Name = "LiveToolStripMenuItem"
-        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
+        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LiveToolStripMenuItem.Text = "Live"
         '
         'SettingsToolStripMenuItem
@@ -243,10 +234,9 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(484, 31)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 31)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(240, 240)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.Size = New System.Drawing.Size(512, 288)
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
@@ -272,17 +262,39 @@ Partial Class Form1
         'ListBox4
         '
         Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(389, 97)
+        Me.ListBox4.Location = New System.Drawing.Point(140, 97)
         Me.ListBox4.Name = "ListBox4"
         Me.ListBox4.Size = New System.Drawing.Size(59, 121)
         Me.ListBox4.TabIndex = 20
         Me.ListBox4.Visible = False
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(12, 319)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(512, 21)
+        Me.ComboBox1.TabIndex = 21
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Location = New System.Drawing.Point(300, 76)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(200, 200)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 22
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(738, 352)
+        Me.ClientSize = New System.Drawing.Size(535, 416)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.ListBox4)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -305,6 +317,7 @@ Partial Class Form1
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -318,8 +331,6 @@ Partial Class Form1
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
     Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel4 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
@@ -340,5 +351,7 @@ Partial Class Form1
     Friend WithEvents BackgroundWorker4 As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker5 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
 
 End Class

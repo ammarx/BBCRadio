@@ -175,8 +175,10 @@ Public Class Form1
         ' For counter As Integer = 0 To 5
         RandomNumber = RandomClass.Next(0, 7)
         '  MsgBox(RandomNumber)
+        PictureBox1.Image = My.Resources.radio1
 
-        PictureBox1.ImageLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/BBC/Images/" + CType(RandomNumber, String) + "_large.png"
+
+        PictureBox2.ImageLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/BBC/Images/" + CType(RandomNumber, String) + "_large.png"
 
         'Next
     End Sub
@@ -235,9 +237,12 @@ Public Class Form1
     End Sub
 
     Private Sub BackgroundWorker3_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker3.RunWorkerCompleted
+        PictureBox2.Visible = True
 
         If valueend = 1 Then
             PictureBox1.ImageLocation = urlpath
+            PictureBox2.ImageLocation = urlpath
+
             Try
 
                 BackgroundWorker4.RunWorkerAsync()
@@ -274,14 +279,9 @@ Public Class Form1
     Private Sub BackgroundWorker4_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker4.RunWorkerCompleted
         ToolStripStatusLabel9.Text = artistX
         ToolStripStatusLabel7.Text = showX
+        ' ToolStripStatusLabel2.Text = titleX
+        Me.Text = "BBC Radio 1 - " + titleX
 
-
-        ToolStripStatusLabel2.Text = titleX
-
-        ' Label1.Text = showX
-        ' Label2.Text = artistX
-
-        ' Label3.Text = titleX
 
     End Sub
     '--------------------------
@@ -290,9 +290,14 @@ Public Class Form1
 
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        ToolStripStatusLabel2.Text = ListBox1.SelectedItem.ToString
+        'ToolStripStatusLabel2.Text = ListBox1.SelectedItem.ToString
+        Me.Text = "BBC Radio 1 - " + ComboBox1.SelectedItem.ToString
+
+        '        ToolStripStatusLabel2.Text = ComboBox1.SelectedItem.ToString
+
         Dim index As Integer
-        index = ListBox1.SelectedIndex
+        ' index = ListBox1.SelectedIndex
+        index = ComboBox1.SelectedIndex
 
         ToolStripStatusLabel4.Text = ListBox3.Items(index)
         '        http://open.live.bbc.co.uk/mediaselector/4/asx/b049b7g7/stream-nonuk-audio_streaming_wma_low_nonuk
@@ -345,7 +350,8 @@ Public Class Form1
     End Sub
 
     Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
-        ListBox1.Items.Clear()
+        '  ListBox1.Items.Clear()
+        ComboBox1.Items.Clear()
         ListBox2.Items.Clear()
 
         finalx = finalx.Replace(Chr(34), "")
@@ -356,9 +362,10 @@ Public Class Form1
         finalx = finalx.Replace("    ", "")
         finalx = finalx.Replace("</link>", "")
         finalx = finalx.Replace("http://www.bbc.co.uk/mediaselector/4/mtis/stream/", "")
-        ListBox1.Items.AddRange(Split(final, vbCrLf))
-
-        ListBox1.Items.Remove("")
+        'ListBox1.Items.AddRange(Split(final, vbCrLf))
+        ComboBox1.Items.AddRange(Split(final, vbCrLf))
+        ComboBox1.Items.Remove("")
+        'ListBox1.Items.Remove("")
 
         ListBox2.Items.AddRange(Split(finalx, vbCrLf))
         ListBox2.Items.Remove("")
@@ -399,9 +406,18 @@ Public Class Form1
 
 
     Private Sub LiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiveToolStripMenuItem.Click
+        'ComboBox1.SelectedText = ""
+        ' RefreshListToolStripMenuItem.Enabled = False
+
+        'BackgroundWorker1.RunWorkerAsync()
+        'BackgroundWorker2.RunWorkerAsync()
+
         AxWindowsMediaPlayer1.URL = "http://www.bbc.co.uk/radio/listen/live/r1.asx"
         ToolStripStatusLabel4.Text = "LIVE"
         BackgroundWorker3.RunWorkerAsync()
+        Timer1.Enabled = True
+
+
 
     End Sub
 
@@ -494,10 +510,51 @@ Public Class Form1
         Dim imgname As String
 
         Dim index As Integer
-        index = ListBox1.SelectedIndex
+        'index = ListBox1.SelectedIndex
+        index = ComboBox1.SelectedIndex
+
         imgname = ListBox4.Items(index)
         PictureBox1.ImageLocation = "http://www.bbc.co.uk/iplayer/images/progbrand/" + imgname + "_512_288.jpg"
         ' PictureBox1.ImageLocation = "http://ichef.bbci.co.uk/images/ic/272x272/" + imgname + ".jpg"
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        PictureBox2.Visible = False
+        ToolStripStatusLabel7.Text = "-"
+        ToolStripStatusLabel9.Text = "-"
+
+        Try
+            BackgroundWorker5.CancelAsync()
+
+        Catch ex As Exception
+
+        End Try
+
+        Timer1.Enabled = False
+
+        Dim index As Integer
+        index = ComboBox1.SelectedIndex
+        ToolStripStatusLabel6.Text = ListBox2.Items(index)
+        Me.Text = "BBC Radio 1 - " + ComboBox1.Text
+
+
+        '---------------------------------------
+
+        Dim indexx As Integer
+        ' index = ListBox1.SelectedIndex
+        indexx = ComboBox1.SelectedIndex
+
+        ToolStripStatusLabel4.Text = ListBox3.Items(indexx)
+        '        http://open.live.bbc.co.uk/mediaselector/4/asx/b049b7g7/stream-nonuk-audio_streaming_wma_low_nonuk
+        Try
+            BackgroundWorker5.RunWorkerAsync()
+
+
+        Catch ex As Exception
+
+        End Try
+        AxWindowsMediaPlayer1.URL = "http://open.live.bbc.co.uk/mediaselector/4/asx/" + ToolStripStatusLabel6.Text + "/stream-nonuk-audio_streaming_wma_low_nonuk"
+
     End Sub
 End Class
 
