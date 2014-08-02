@@ -377,6 +377,10 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ListSongsToolStripMenuItem.Enabled = False
+
+
+        AxWindowsMediaPlayer1.enableContextMenu = False
 
         RefreshListToolStripMenuItem.Enabled = False
 
@@ -407,7 +411,10 @@ Public Class Form1
 
     Private Sub LiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiveToolStripMenuItem.Click
         'ComboBox1.SelectedText = ""
+        ListSongsToolStripMenuItem.Enabled = False
         RefreshListToolStripMenuItem.Enabled = False
+        AxWindowsMediaPlayer1.enableContextMenu = False
+        Form2.Close()
 
         Try
             BackgroundWorker1.CancelAsync()
@@ -529,6 +536,9 @@ Public Class Form1
 
     End Sub
 
+    Public Shared pid As String
+
+
     Private Sub BackgroundWorker5_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker5.RunWorkerCompleted
         ListBox4.Items.Clear()
         ListBox4.Items.AddRange(Split(tdx, vbCrLf))
@@ -541,14 +551,19 @@ Public Class Form1
         index = ComboBox1.SelectedIndex
 
         imgname = ListBox4.Items(index)
+        
         PictureBox1.ImageLocation = "http://www.bbc.co.uk/iplayer/images/progbrand/" + imgname + "_512_288.jpg"
         ' PictureBox1.ImageLocation = "http://ichef.bbci.co.uk/images/ic/272x272/" + imgname + ".jpg"
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        ListSongsToolStripMenuItem.Enabled = True
+        Form2.Close()
+
         PictureBox2.Visible = False
         ToolStripStatusLabel7.Text = "-"
         ToolStripStatusLabel9.Text = "-"
+        AxWindowsMediaPlayer1.enableContextMenu = False
 
         Try
             BackgroundWorker5.CancelAsync()
@@ -583,6 +598,15 @@ Public Class Form1
         AxWindowsMediaPlayer1.URL = "http://open.live.bbc.co.uk/mediaselector/4/asx/" + ToolStripStatusLabel6.Text + "/stream-nonuk-audio_streaming_wma_low_nonuk"
 
     End Sub
+
+    Private Sub AboutToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem1.Click
+        MsgBox("Made by Ammar Ahmad")
+    End Sub
+
+    Private Sub ListSongsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListSongsToolStripMenuItem.Click
+        Form2.Show()
+
+    End Sub
 End Class
 
 'http://www.bbc.co.uk/programmes/b037wxgj.rdf
@@ -599,3 +623,8 @@ End Class
 'http://www.bbc.co.uk/iplayer/images/progbrand/b006wkry_512_288.jpg
 'http://www.bbc.co.uk/radio/aod/availability/radio1.xml
 'http://www.bbc.co.uk/iplayer/images/progbrand/p022gdqk_512_288.jpg
+'http://open.live.bbc.co.uk/aps/programmes/b04bmnpk/segments.json
+
+'"record_id":"nzqpxx"
+'http://www.bbc.co.uk/music/images/records/96x96/nzqpxx
+'http://open.live.bbc.co.uk/aps/programmes/b04bmpcg/segments.json

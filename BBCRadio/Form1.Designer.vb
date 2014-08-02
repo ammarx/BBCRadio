@@ -46,6 +46,7 @@ Partial Class Form1
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RefreshListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -57,6 +58,7 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ListSongsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -199,7 +201,7 @@ Partial Class Form1
         '
         'MusicToolStripMenuItem
         '
-        Me.MusicToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LiveToolStripMenuItem})
+        Me.MusicToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LiveToolStripMenuItem, Me.ListSongsToolStripMenuItem})
         Me.MusicToolStripMenuItem.Name = "MusicToolStripMenuItem"
         Me.MusicToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
         Me.MusicToolStripMenuItem.Text = "Music"
@@ -207,7 +209,7 @@ Partial Class Form1
         'LiveToolStripMenuItem
         '
         Me.LiveToolStripMenuItem.Name = "LiveToolStripMenuItem"
-        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
+        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.LiveToolStripMenuItem.Text = "Live"
         '
         'SettingsToolStripMenuItem
@@ -225,9 +227,16 @@ Partial Class Form1
         '
         'AboutToolStripMenuItem
         '
+        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem1})
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.AboutToolStripMenuItem.Text = "Help"
+        '
+        'AboutToolStripMenuItem1
+        '
+        Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem1.Text = "About"
         '
         'BackgroundWorker2
         '
@@ -310,6 +319,12 @@ Partial Class Form1
         Me.TabPage1.Text = "Available Programmes:"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'ListSongsToolStripMenuItem
+        '
+        Me.ListSongsToolStripMenuItem.Name = "ListSongsToolStripMenuItem"
+        Me.ListSongsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListSongsToolStripMenuItem.Text = "List Songs"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -379,5 +394,7 @@ Partial Class Form1
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents AboutToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListSongsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
