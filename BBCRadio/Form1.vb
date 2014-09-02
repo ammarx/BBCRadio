@@ -286,9 +286,6 @@ Public Class Form1
     End Sub
     '--------------------------
 
-
-
-
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'ToolStripStatusLabel2.Text = ListBox1.SelectedItem.ToString
         Me.Text = "BBC Radio 1 - " + ComboBox1.SelectedItem.ToString
@@ -343,7 +340,7 @@ Public Class Form1
 
                 End If
 
-                
+
             End If
 
         End While
@@ -377,15 +374,14 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ListSongsToolStripMenuItem.Enabled = False
+            ListSongsToolStripMenuItem.Enabled = False
+            AxWindowsMediaPlayer1.enableContextMenu = False
+            RefreshListToolStripMenuItem.Enabled = False
 
+            BackgroundWorker1.RunWorkerAsync()
+            BackgroundWorker2.RunWorkerAsync()
 
-        AxWindowsMediaPlayer1.enableContextMenu = False
-
-        RefreshListToolStripMenuItem.Enabled = False
-
-        BackgroundWorker1.RunWorkerAsync()
-        BackgroundWorker2.RunWorkerAsync()
+        
     End Sub
 
   
@@ -399,16 +395,7 @@ Public Class Form1
 
     Dim tdx As String
 
-    Public Sub golive()
-
-    End Sub
-
-
-    Public Sub gooffline()
-
-    End Sub
-
-
+    
     Private Sub LiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiveToolStripMenuItem.Click
         'ComboBox1.SelectedText = ""
         ListSongsToolStripMenuItem.Enabled = False
@@ -500,11 +487,7 @@ Public Class Form1
         ListBox3.Items.Remove("")
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-
+    
     Private Sub BackgroundWorker5_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker5.DoWork
       
         Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://www.bbc.co.uk/radio/aod/availability/radio1.xml" + "?t=" + TimeOfDay.ToString())

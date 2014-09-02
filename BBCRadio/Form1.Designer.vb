@@ -43,6 +43,7 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MusicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListSongsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RefreshListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,7 +59,6 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ListSongsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -98,9 +98,9 @@ Partial Class Form1
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(140, 64)
+        Me.ListBox2.Location = New System.Drawing.Point(96, 64)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(59, 147)
+        Me.ListBox2.Size = New System.Drawing.Size(180, 186)
         Me.ListBox2.TabIndex = 8
         Me.ListBox2.Visible = False
         '
@@ -209,8 +209,14 @@ Partial Class Form1
         'LiveToolStripMenuItem
         '
         Me.LiveToolStripMenuItem.Name = "LiveToolStripMenuItem"
-        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LiveToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.LiveToolStripMenuItem.Text = "Live"
+        '
+        'ListSongsToolStripMenuItem
+        '
+        Me.ListSongsToolStripMenuItem.Name = "ListSongsToolStripMenuItem"
+        Me.ListSongsToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
+        Me.ListSongsToolStripMenuItem.Text = "List Songs"
         '
         'SettingsToolStripMenuItem
         '
@@ -274,9 +280,9 @@ Partial Class Form1
         'ListBox4
         '
         Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(140, 97)
+        Me.ListBox4.Location = New System.Drawing.Point(282, 64)
         Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(59, 121)
+        Me.ListBox4.Size = New System.Drawing.Size(218, 186)
         Me.ListBox4.TabIndex = 20
         Me.ListBox4.Visible = False
         '
@@ -319,21 +325,15 @@ Partial Class Form1
         Me.TabPage1.Text = "Available Programmes:"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'ListSongsToolStripMenuItem
-        '
-        Me.ListSongsToolStripMenuItem.Name = "ListSongsToolStripMenuItem"
-        Me.ListSongsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ListSongsToolStripMenuItem.Text = "List Songs"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(535, 416)
+        Me.Controls.Add(Me.ListBox4)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.ListBox4)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatusStrip1)
