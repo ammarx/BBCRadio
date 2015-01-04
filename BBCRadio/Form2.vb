@@ -80,6 +80,10 @@ Public Class Form2
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim index As Integer
         index = ListBox1.SelectedIndex
+        If index = -1 Then
+            Exit Sub
+
+        End If
         PictureBox1.ImageLocation = "http://www.bbc.co.uk/music/images/records/96x96/" + ListBox3.Items(index)
 
         Dim mp3url As String
