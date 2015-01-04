@@ -113,7 +113,7 @@ Public Class Form1
 
     Public Sub convbrand_pid()
 
-        Dim document As XmlReader = New XmlTextReader("http://www.bbc.co.uk/programmes/" + titleX + ".xml" + "?t=" + datetime)
+        Dim document As XmlReader = New XmlTextReader("http://www.bbc.co.uk/programmes/" + titleX + ".xml")
 
         While (document.Read())
 
@@ -155,7 +155,7 @@ Public Class Form1
         Dim client As WebClient = New WebClient()
         Try
             ' URL = "http://open.bbci.co.uk/rio/poll/service/bbc_radio_one/10.json"
-            URL = "http://polling.bbc.co.uk/radio/realtime/bbc_radio_one.json" + "?t=" + datetime 'DateTime.Now.ToLocalTime()
+            URL = "http://polling.bbc.co.uk/radio/realtime/bbc_radio_one.json"
             result = client.DownloadString(URL)
             'MsgBox(result)
             ConvAndSave()
@@ -197,7 +197,7 @@ Public Class Form1
 
     Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker3.DoWork
         '"<span class=""title-container"">Phil Taggart and Alice Levine</span>"
-        Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://open.bbci.co.uk/rio/poll/service/bbc_radio_one/10.json" + "?t=" + datetime) 'DateTime.Now.ToLocalTime())
+        Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://open.bbci.co.uk/rio/poll/service/bbc_radio_one/10.json") 'DateTime.Now.ToLocalTime())
         Dim response As System.Net.HttpWebResponse = request.GetResponse()
         urlpath = ""
         Dim sr As System.IO.StreamReader = New System.IO.StreamReader(response.GetResponseStream())
@@ -359,6 +359,7 @@ Public Class Form1
         finalx = finalx.Replace("    ", "")
         finalx = finalx.Replace("</link>", "")
         finalx = finalx.Replace("http://www.bbc.co.uk/mediaselector/4/mtis/stream/", "")
+        finalx = finalx.Replace(" ", "")
         'ListBox1.Items.AddRange(Split(final, vbCrLf))
         ComboBox1.Items.AddRange(Split(final, vbCrLf))
         ComboBox1.Items.Remove("")
@@ -366,7 +367,6 @@ Public Class Form1
 
         ListBox2.Items.AddRange(Split(finalx, vbCrLf))
         ListBox2.Items.Remove("")
-
         
         RefreshListToolStripMenuItem.Enabled = True
 
@@ -451,7 +451,7 @@ Public Class Form1
 
     Private Sub BackgroundWorker2_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker2.DoWork
 
-        Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://www.bbc.co.uk/radio/aod/availability/radio1.xml" + "?t=" + TimeOfDay.ToString())
+        Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://www.bbc.co.uk/radio/aod/availability/radio1.xml")
         Dim response As System.Net.HttpWebResponse = request.GetResponse()
 
         Dim urlpath As String = ""
@@ -490,7 +490,7 @@ Public Class Form1
     
     Private Sub BackgroundWorker5_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker5.DoWork
       
-        Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://www.bbc.co.uk/radio/aod/availability/radio1.xml" + "?t=" + TimeOfDay.ToString())
+        Dim request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://www.bbc.co.uk/radio/aod/availability/radio1.xml")
         Dim response As System.Net.HttpWebResponse = request.GetResponse()
 
         Dim urlpath As String = ""
@@ -544,6 +544,8 @@ Public Class Form1
         Form2.Close()
 
         PictureBox2.Visible = False
+
+        ToolStripStatusLabel4.Text = "-"
         ToolStripStatusLabel7.Text = "-"
         ToolStripStatusLabel9.Text = "-"
         AxWindowsMediaPlayer1.enableContextMenu = False
@@ -569,7 +571,7 @@ Public Class Form1
         ' index = ListBox1.SelectedIndex
         indexx = ComboBox1.SelectedIndex
 
-        ToolStripStatusLabel4.Text = ListBox3.Items(indexx)
+        ' ToolStripStatusLabel4.Text = ListBox3.Items(indexx)
         '        http://open.live.bbc.co.uk/mediaselector/4/asx/b049b7g7/stream-nonuk-audio_streaming_wma_low_nonuk
         Try
             BackgroundWorker5.RunWorkerAsync()
@@ -589,6 +591,10 @@ Public Class Form1
     Private Sub ListSongsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListSongsToolStripMenuItem.Click
         Form2.Show()
 
+    End Sub
+
+    Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
+        MsgBox(ListBox2.Text)
     End Sub
 End Class
 

@@ -98,7 +98,7 @@ Partial Class Form1
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(96, 64)
+        Me.ListBox2.Location = New System.Drawing.Point(19, 64)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(180, 186)
         Me.ListBox2.TabIndex = 8
@@ -130,9 +130,9 @@ Partial Class Form1
         'ListBox3
         '
         Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(140, 31)
+        Me.ListBox3.Location = New System.Drawing.Point(205, 64)
         Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(59, 173)
+        Me.ListBox3.Size = New System.Drawing.Size(112, 186)
         Me.ListBox3.TabIndex = 14
         Me.ListBox3.Visible = False
         '
@@ -280,9 +280,9 @@ Partial Class Form1
         'ListBox4
         '
         Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(282, 64)
+        Me.ListBox4.Location = New System.Drawing.Point(323, 64)
         Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(218, 186)
+        Me.ListBox4.Size = New System.Drawing.Size(165, 186)
         Me.ListBox4.TabIndex = 20
         Me.ListBox4.Visible = False
         '
@@ -330,6 +330,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(535, 416)
+        Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.ListBox4)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TabControl1)
@@ -338,7 +339,6 @@ Partial Class Form1
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.ListBox1)
